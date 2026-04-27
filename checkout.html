@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Radiant Glow Skincare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <header> 
+        <nav class="navbar">
+            <a href="index.html" class="logo">Radiant Glow</a>
+            <ul class="nav-links">
+               <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+               <li><a href="products.html">Products</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+        <div class="nav-actions">
+       <a href="#cart" class="cart-icon" title="View Cart">
+       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+    </svg>
+    <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+            <a href="signin.html" class="signin-btn">Sign In</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header> 
+    
+
+<!-- MAIN CART PAGE CONTENT -->
+    <main class="checkoutPage">
+
+        <!-- PAGE TITLE -->
+        <h1 class="yourCart">Your Cart</h1>
+        <div id="checkout-success" class="checkout-success" style="display: none;" role="alert">
+            Thank you! Your payment was successful.
+        </div>
+
+        <!-- CART ITEMS SECTION -->
+        <section class="cartContainer" id="cartContainer">
+            <!-- JS will inject cart items here -->
+        </section>
+
+
+<!-- SAVED FOR LATER SECTION --> 
+ <h2 class="saveLaterTitle">Saved for Later</h2> 
+ <div class="savedLaterContainer"></div>
+
+
+
+        <!-- ORDER SUMMARY (ASIDE ELEMENT FROM MDN) -->
+        <aside class="cartSummary">
+
+            <h2 class="orders">Order Summary</h2>
+
+            <p class="cartSubtotal" id="cartSubtotal">Subtotal: <span class="cartSubtotal">$0.00</span></p>
+             <div class="checkoutOrders">
+            <button class="checkout-btn" id="checkout-btn" type="button">
+                Proceed to Checkout
+            </button>
+            </div>
+        </aside>
+       <footer>
+        <p>&copy; 2025 Radiant Glow Skincare. All rights reserved.</p>
+    </footer> 
+    <script src="productData.js"></script>
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+
+    <script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll("nav a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+</body>
+</html> 
